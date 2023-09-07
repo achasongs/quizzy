@@ -76,6 +76,29 @@ function App() {
           correct: true,
         },
       ],
+    },
+
+    {
+      id: 4,
+      question: "Who is the first man to win the Prestigious Balon d'or Award?",
+      answers: [
+        {
+          text: "Pele",
+          correct: false,
+        },
+        {
+          text: "Alfredo Di Stéfano",
+          correct: false,
+        },
+        {
+          text: "Stanley Matthews",
+          correct: true,
+        },
+        {
+          text: "George Best",
+          correct: false,
+        },
+      ],
     }
   ];
   const moneyPyramid = useMemo(() =>
@@ -111,7 +134,7 @@ function App() {
 <>
             <div className="top">
             <div className="timer">
-              <Timer setStop={setStop} questionNumber={questionNumber}/>
+              <Timer setStop={setStop} questionNumber={questionNumber} />
               </div>
             </div>
             <div className="bottom">
