@@ -10,6 +10,10 @@ function App() {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
   const [earned, setEarned] = useState("$ 0");
+  const [inputValue, setInputValue] = useState('');
+  const showName = (newValue) => {
+    setInputValue(newValue);
+  };
 
   const data = [
     {
@@ -100,6 +104,28 @@ function App() {
           correct: false,
         },
       ],
+    },
+    {
+      id: 5,
+      question: "Who owns Harvard University?",
+      answers: [
+        {
+          text: "George Washington",
+          correct: false,
+        },
+        {
+          text: "No one",
+          correct: true,
+        },
+        {
+          text: "Palma Welsh",
+          correct: false,
+        },
+        {
+          text: "Abraham Lincoln",
+          correct: false,
+        },
+      ],
     }
   ];
   const moneyPyramid = useMemo(() =>
@@ -134,7 +160,7 @@ function App() {
         <>
          <div className="main">
         {stop ? 
-        <h1 className="endText">You earned: {earned}</h1> : (
+        <h1 className="endText"> {inputValue} You earned: {earned}</h1> : (
 <>
             <div className="top">
             <div className="timer">
